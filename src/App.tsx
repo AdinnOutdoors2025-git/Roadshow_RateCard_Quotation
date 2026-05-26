@@ -2,6 +2,7 @@
 // @ts-nocheck
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
+import RoadshowQO from "./RoadshowQO";
 
 const LOGO_SRC = "https://www.adinn.com/_next/static/media/AdinnLogo.80d7c577.svg";
 
@@ -616,6 +617,10 @@ export default function App() {
             </div>
           )}
         </section>
+
+        <div>
+          <RoadshowQO />
+          </div>
       </main>
     </div>
   );
