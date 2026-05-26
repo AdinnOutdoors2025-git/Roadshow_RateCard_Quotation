@@ -248,7 +248,7 @@ export default function App() {
         setIsLoadingVehicles(true);
         setVehiclesError("");
 
-        const response = await fetch(`${VEHICLES_JSON_URL}?v=${Date.now()}`, {
+        const response = await fetch(`https://adinn-space.sgp1.cdn.digitaloceanspaces.com/roadshowRateCard/vehicles.json?v=${Date.now()}`, {
           cache: "no-store",
         });
 
@@ -433,7 +433,7 @@ export default function App() {
         throw new Error("The uploaded JSON must be an array of vehicles.");
       }
 
-      const response = await fetch(`${API_BASE_URL}/api/update-vehicles-json`, {
+      const response = await fetch(`https://roadshow-backend.onrender.com/api/update-vehicles-json`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
