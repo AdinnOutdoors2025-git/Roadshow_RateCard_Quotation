@@ -628,8 +628,8 @@ export default function RoadshowQO() {
   }, [days]);
 
   const quoteLineItems = useMemo<QuoteLineItem[]>(() => {
-    const rtoMonthRawValue = days / RTO_PERMISSION_VALIDITY_DAYS;
-    const rtoMonthText = rtoMonthRawValue.toFixed(2);
+    // const rtoMonthRawValue = days / RTO_PERMISSION_VALIDITY_DAYS;
+    // const rtoMonthText = rtoMonthRawValue.toFixed(2);
     const effectivePowerBackupRate =
       includeLed55 && pricingDetails.powerBackup <= 0
         ? POWER_BACKUP_ADDON_RATE_PER_DAY
@@ -752,18 +752,18 @@ export default function RoadshowQO() {
 
   const grandTotal = subtotal + gstAmount;
 
-  const includedServices = useMemo(() => {
-    const baseIncluded = selectedVehicle?.included?.length
-      ? selectedVehicle.included
-      : [
-          "Vehicle rent",
-          "Driver bata, food and accommodation",
-          `Fuel within ${kmLimit} km/day`,
-          "Basic campaign movement",
-        ];
+  // const includedServices = useMemo(() => {
+  //   const baseIncluded = selectedVehicle?.included?.length
+  //     ? selectedVehicle.included
+  //     : [
+  //         "Vehicle rent",
+  //         "Driver bata, food and accommodation",
+  //         `Fuel within ${kmLimit} km/day`,
+  //         "Basic campaign movement",
+  //       ];
 
-    return Array.from(new Set(baseIncluded));
-  }, [selectedVehicle, kmLimit]);
+  //   return Array.from(new Set(baseIncluded));
+  // }, [selectedVehicle, kmLimit]);
 
   const selectedAddOns = useMemo(() => {
     const addOns: string[] = [];
