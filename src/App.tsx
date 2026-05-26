@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
 import RoadshowQO from "./RoadshowQO";
+import { useNavigate } from "react-router-dom";
 
 const LOGO_SRC = "https://www.adinn.com/_next/static/media/AdinnLogo.80d7c577.svg";
 
@@ -11,7 +12,7 @@ const LOGO_SRC = "https://www.adinn.com/_next/static/media/AdinnLogo.80d7c577.sv
 
 // // const API_BASE_URL = "http://localhost:3001";
 // const API_BASE_URL = "https://roadshowratecard.netlify.app";
-  
+
 
 //KARTHI ADDED 
 const USE_LOCAL_JSON = false;   //set true for local , false for live
@@ -102,7 +103,7 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   const [activeImage, setActiveImage] = useState(images[0] || "");
   const hasLocationCharges = Boolean(vehicle.locationCharges?.length);
   const displayCategory = normalizeCategory(vehicle.category);
-//
+  //
   useEffect(() => {
     setActiveImage(images[0] || "");
   }, [vehicle.id, images]);
@@ -242,6 +243,8 @@ export default function App() {
   const logoTimerRef = useRef<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const brandAreaRef = useRef<HTMLDivElement | null>(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadCloudVehicles = async () => {
@@ -539,7 +542,10 @@ export default function App() {
             </p>
           </div>
 
-          <div className="heroStats singleStat">
+          <div className="heroStats singleStat"
+           onClick={() => navigate('/RoadshowQO')}
+
+          >
             <div>
               <span>Total Variants</span>
               <strong>{vehicles.length}</strong>
@@ -558,8 +564,8 @@ export default function App() {
               {isLoadingVehicles
                 ? "Loading vehicles..."
                 : category === "All"
-                ? `${selectedCategoryCount} vehicles available`
-                : `${selectedCategoryCount} vehicles in ${category}`}
+                  ? `${selectedCategoryCount} vehicles available`
+                  : `${selectedCategoryCount} vehicles in ${category}`}
             </p>
           </div>
 
@@ -618,9 +624,9 @@ export default function App() {
           )}
         </section>
 
-        <div>
+        {/* <div>
           <RoadshowQO />
-          </div>
+        </div> */}
       </main>
     </div>
   );
