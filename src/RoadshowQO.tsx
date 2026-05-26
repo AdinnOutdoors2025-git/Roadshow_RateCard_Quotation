@@ -536,7 +536,9 @@ export default function RoadshowQO() {
         setIsLoadingVehicles(true);
         setVehiclesError("");
 
-        const response = await fetch(`${VEHICLES_JSON_URL}?v=${Date.now()}`, {
+        // const response = await fetch(`${VEHICLES_JSON_URL}?v=${Date.now()}`, {
+        const response = await fetch(`./vehicles_live.json?v=${Date.now()}`, {
+
           cache: "no-store",
         });
 
