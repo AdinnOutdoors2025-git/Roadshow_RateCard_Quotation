@@ -6,14 +6,14 @@ const LOGO_SRC = "https://www.adinn.com/_next/static/media/AdinnLogo.80d7c577.sv
 // const VEHICLES_JSON_URL =
 //   "https://adinn-space.sgp1.cdn.digitaloceanspaces.com/roadshowRateCard/vehicles.json";
 
-// const API_BASE_URL = "http://localhost:3001";
-// // const API_BASE_URL = "https://roadshowratecard.netlify.app";
+// // const API_BASE_URL = "http://localhost:3001";
+// const API_BASE_URL = "https://roadshowratecard.netlify.app";
   
 
 //KARTHI ADDED 
 const USE_LOCAL_JSON = false;   //set true for local , false for live
 const VEHICLES_JSON_URL = USE_LOCAL_JSON
-  ? "/vehicles.json"
+  ? "./vehicles.json"
   : "https://adinn-space.sgp1.cdn.digitaloceanspaces.com/roadshowRateCard/vehicles.json";
 
 const USE_LOCAL_API = false;   //set true for local , false for live
