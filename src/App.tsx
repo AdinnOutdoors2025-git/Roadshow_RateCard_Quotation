@@ -248,7 +248,7 @@ export default function App() {
         setIsLoadingVehicles(true);
         setVehiclesError("");
 
-        const response = await fetch(`https://adinn-space.sgp1.cdn.digitaloceanspaces.com/roadshowRateCard/vehicles.json?v=${Date.now()}`, {
+        const response = await fetch(`./vehicles.json?v=${Date.now()}`, {
           cache: "no-store",
         });
 
