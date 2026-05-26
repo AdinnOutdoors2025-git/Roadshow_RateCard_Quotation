@@ -99,7 +99,7 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   const [activeImage, setActiveImage] = useState(images[0] || "");
   const hasLocationCharges = Boolean(vehicle.locationCharges?.length);
   const displayCategory = normalizeCategory(vehicle.category);
-
+//
   useEffect(() => {
     setActiveImage(images[0] || "");
   }, [vehicle.id, images]);
